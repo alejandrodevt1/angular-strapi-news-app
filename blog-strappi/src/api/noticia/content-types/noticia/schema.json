@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "noticias",
+  "info": {
+    "singularName": "noticia",
+    "pluralName": "noticias",
+    "displayName": "Noticia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
+    },
+    "Imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Resumen": {
+      "type": "text",
+      "minLength": 100,
+      "maxLength": 155,
+      "required": true
+    },
+    "Contenido": {
+      "type": "blocks",
+      "required": true
+    },
+    "fecha": {
+      "type": "date",
+      "required": true
+    },
+    "estado": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Borrador",
+        "Publicado",
+        "Archivado"
+      ]
+    },
+    "categorias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categoria.categoria",
+      "mappedBy": "noticias"
+    },
+    "Autor": {
+      "type": "string",
+      "default": "notice@redaccion.com",
+      "required": true
+    }
+  }
+}

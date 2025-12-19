@@ -1,0 +1,40 @@
+<nav class="bg-white p-4 shadow-lg">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="items-center">
+      <a [routerLink]="['']"><mat-icon>travel_explore</mat-icon></a>
+    </div>
+      
+    <div id="nav-links" class="hidden md:flex space-x-4">
+      @for (item of categorias; track $index) {
+      <a
+        [routerLink]="[`/${item.categoria}`]"
+        class="hover:bg-cyan-800 font-semibold hover:text-white text-[16px] px-3 py-2 rounded-md transition duration-200"
+        >
+        {{ item.categoria }}
+      </a>
+      }
+    </div>
+
+      <div class="md:flex md:w-[140px] md:items-center">
+      <p class="md:text-[16px]  font-semibold text-center">Portal de <span class="text-blue-500">noticias</span></p>
+      <p class="md:text-[22px] text-center font-bold">|News</p>
+    </div>
+
+
+    <button #menuBtn class="md:hidden focus:outline-none">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+  </div>
+
+  <div #mobileNav class="hidden md:hidden mt-2 space-y-1 text-center">
+    @for (item of categorias; track $index) {
+    <a
+      [routerLink]="[`/${item.categoria}`]"
+      class="text-gray-500 block hover:bg-gray-800 px-3 py-2 rounded-md transition duration-200"
+    >
+      {{ item.categoria }}
+    </a>
+    }
+  </div>
+</nav>
