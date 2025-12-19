@@ -1,3 +1,7 @@
+##BlogNoticiasAPP
+
+<img width="1269" height="631" alt="image" src="https://github.com/user-attachments/assets/0f983d04-fe8e-49d1-b8a2-e992ff392a56" />
+
 
 ## 🛠️ Stack Tecnológico
 
