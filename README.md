@@ -1,59 +1,57 @@
-# BlogNoticiasApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+## 🛠️ Stack Tecnológico
 
-## Development server
+| Capa | Tecnología |
+| :--- | :--- |
+| **Frontend** | Angular v18+ (Tipado estricto) |
+| **Diseño** | Tailwind CSS & SCSS |
+| **Componentes** | Angular Material |
+| **Backend** | Strapi CMS |
+| **Base de Datos** | PostgreSQL |
+| **Reactividad** | RxJS (Observables & Pipeable Operators) |
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🗄️ Arquitectura de Datos (PostgreSQL)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La base de datos relacional está diseñada para soportar una estructura de contenido compleja y escalable. La lógica principal reside en la relación entre artículos y sus clasificaciones:
 
-## Code scaffolding
+### Relación Many-to-Many (M:M)
+La entidad **Noticia** y la entidad **Categoria** están vinculadas mediante una relación de "muchos a muchos":
+* **Flexibilidad:** Una noticia puede etiquetarse en múltiples categorías (ej. *Tecnología* y *Negocios*).
+* **Organización:** Una categoría puede contener una lista infinita de noticias asociadas.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## ⚙️ Instalación y Configuración
 
-```bash
-ng generate component component-name
-```
+Sigue estos pasos para replicar el entorno de desarrollo localmente.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 1. Requisitos Previos
+* **Node.js** (v18 o superior)
+* **PostgreSQL** instalado y ejecutándose.
+* **Angular CLI** (`npm install -g @angular/cli`)
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 2. Configuración del Backend (Strapi)
+1. Navega a la carpeta del backend:
+   ```bash
+   cd backend
+2. Instala las dependencias:
+   ```bash
+   npm install
+3. Crea un archivo .env en la raíz de /backend con tus credenciales:
+    ```bash
+    DATABASE_CLIENT=postgres
+    DATABASE_HOST=localhost
+    DATABASE_PORT=5432
+    DATABASE_NAME=nombre_de_tu_db
+    DATABASE_USERNAME=tu_usuario
+    DATABASE_PASSWORD=tu_contraseña
+4. Inicia el servidor de Strapi:
+   ```bash
+   npm run develop
+### 3. Configuración del Frontend (Angular)
+1. Navega a la carpeta del frontend:
+    ```bash
+   npm install
+2. Inicia la aplicación:
+    ```bash
+   ng serve
